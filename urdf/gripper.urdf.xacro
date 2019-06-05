@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="c_model_open">
+
+    <link name="robotiq_mount_link"/>
+
+    <joint name="robotiq_c_model_adapter" type="fixed" >
+        <origin xyz="0.0 0.0 0.09712" rpy="0.0 0.0 0.0"/>
+        <parent link="robotiq_mount_link" />
+        <child link="robotiq_c_model_link" />
+    </joint>
+
+    <link name="robotiq_c_model_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robotiq_c_model_viz/meshes/c_model_open.dae" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://robotiq_c_model_viz/meshes/c_model_open_collision.stl" />
+            </geometry>
+        </collision>
+    </link>
+</robot>
