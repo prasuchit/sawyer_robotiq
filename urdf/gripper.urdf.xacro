@@ -1,11 +1,16 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="c_model_open">
+    <joint name="robotiq_gripper_base_joint" type="fixed" >
+        <origin xyz="0.0 0.0 0.001" rpy="0.0 0.0 1.5707"/>
+        <parent link="right_hand" />
+        <child link="right_gripper_base" />
+    </joint>
 
-    <link name="robotiq_mount_link"/>
+    <link name="right_gripper_base"/>
 
     <joint name="robotiq_c_model_adapter" type="fixed" >
         <origin xyz="0.0 0.0 0.09712" rpy="0.0 0.0 0.0"/>
-        <parent link="robotiq_mount_link" />
+        <parent link="right_gripper_base" />
         <child link="robotiq_c_model_link" />
     </joint>
 
